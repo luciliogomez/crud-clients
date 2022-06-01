@@ -22,11 +22,11 @@
 
                 <tbody>
                     @if(isset($clients))
-                    @foreach($clientes as $cliente)
+                    @foreach($clients as $client)
                         <tr>
-                            <td>{{$cliente->id }}</td>
-                            <td>{{$cliente->nome }}</td>
-                            <td>{{$cliente->email }}</td>
+                            <td>{{$client->id }}</td>
+                            <td>{{$client->nome }}</td>
+                            <td>{{$client->email }}</td>
                             <td>
                                 <a href="/clients/edit" class="btn btn-floating orange">
                                     <i class="fa fa-edit"></i>
@@ -40,8 +40,15 @@
                     @endif
                 </tbody>
             </table>
+           
         </div>
+        
     </div>
+    <div class="white paginacao">
+                @if(isset($clients))
+                    {!! $clients->links()!!}
+                @endif
+            </div>
     
     
     
