@@ -28,12 +28,20 @@
                             <td>{{$client->nome }}</td>
                             <td>{{$client->email }}</td>
                             <td>
-                                <a href="{{route('clients.edit',$client->id)}}" class="btn btn-floating orange">
-                                    <i class="fa fa-edit"></i>
-                                </a>
-                                <a href="/clients/delete" class="btn btn-floating red">
+                               
+                                <form action="{{route('clients.delete',$client->id)}}" method="post">
+                                    <a href="{{route('clients.edit',$client->id)}}" class="btn btn-floating orange">
+                                        <i class="fa fa-edit"></i>
+                                    </a>    
+                                    @csrf
+                                    @method("DELETE")
+                                    <button type="submit" class="btn btn-floating red">
                                     <i class="fa fa-trash"></i>
-                                </a>
+                                    </button>
+                                </form>
+                                <!-- <a href="/clients/delete" class="btn btn-floating red">
+                                    <i class="fa fa-trash"></i>
+                                </a> -->
                             </td>
                         </tr>
                     @endforeach
