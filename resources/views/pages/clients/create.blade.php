@@ -27,7 +27,7 @@
                 <a href="{{route('home')}}" class="btn red">VOLTAR</a>
             </div>
 
-            {{$status}}
+            {{$status??''}}
         </div>
     </form>
 </div>

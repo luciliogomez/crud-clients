@@ -23,11 +23,11 @@
             Home
         </a>
         
-        <a href="/novo" class="list-group-item white-text"><i class="fa fa-edit fa-fw" aria-hidden="true"></i>
+        <a href="{{route('clients.create')}}" class="list-group-item white-text"><i class="fa fa-edit fa-fw" aria-hidden="true"></i>
             Novo Cliente
         </a>
 
-        <a href="/lista" class="list-group-item white-text"><i class="fa fa-list fa-fw" aria-hidden="true"></i>
+        <a href="{{route('clients.index')}}" class="list-group-item white-text"><i class="fa fa-list fa-fw" aria-hidden="true"></i>
             Lista de Clientes
         </a>
         <a href="/perfil" class="list-group-item white-text"><i class="fa fa-user fa-fw" aria-hidden="true"></i>

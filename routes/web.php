@@ -10,7 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('pages.clients.index',['status'=>'']);
+    return view('pages.home',['status'=>'']);
 })->name('home');
+
+Route::get('/clients', "ClientController@index")->name('clients.index');
+Route::get('/clients/create', "ClientController@create")->name('clients.create');
+Route::get('/clients/edit', "ClientController@edit")->name('clients.edit');
