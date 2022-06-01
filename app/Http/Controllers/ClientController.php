@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUpdateRequest;
+use App\Models\Client;
 use Illuminate\Http\Request;
 
 class ClientController extends Controller
@@ -18,9 +20,15 @@ class ClientController extends Controller
         return view('pages.clients.create');
     }
 
-    public function store(){
-
-    
+    public function store(StoreUpdateRequest $request){
+        
+        Client::create([
+            "nome" => $request->nome,
+            "email"=> $request->email
+        ]);
+        return view("pages.clients.create",[
+            'status' => "Cliente Adicionado"
+        ]);
     }
 
     public function edit()

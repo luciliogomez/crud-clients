@@ -60,7 +60,20 @@
                     <!-- Put your content here -->
                     @yield("content")      
 
-                    
+                    @if($errors->any())
+            <!-- Modal Structure -->
+                <div id="modal1" class="modal">
+                <div class="modal-content">
+                <h4>Ocorreu um Erro:</h4>
+                @foreach($errors->all() as $error)
+                        <p class="red-text">{{$error}}</p>
+                @endforeach
+                </div>
+                <div class="modal-footer">
+                <a href="#" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                </div>
+                </div>
+            @endif
 
                 </div>
             </div>
@@ -69,6 +82,22 @@
 
     <script src="{{ asset('/css/assets/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ asset('/css/assets/materialize/js/materialize.js') }}"></script>
+
+    @if($errors->any())
+        <script>
+            $(document).ready(function(){
+                $('.modal').modal();
+                $('#modal1').modal('open');
+            });
+        </script>
+    @elseif(isset($status))
+            <script>
+                $(document).ready(function(){
+                    $('.modal').modal();
+                    $('#modal1').modal('open');
+                });
+            </script>
+    @endif
     <script>
         $('select').material_select();
         
@@ -76,6 +105,8 @@
         setTimeout(() => {
             erro.innerHTML = ''
         }, 5000);
+
+        
     </script>
 </body>
 </html>
