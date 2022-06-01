@@ -12,7 +12,7 @@ class ClientController extends Controller
 
     public function index()
     {
-        $clients = Client::paginate(2);
+        $clients = Client::paginate(3);
         return view("pages.clients.index",[
             "clients" => $clients
         ]);
@@ -34,14 +34,32 @@ class ClientController extends Controller
         ]);
     }
 
-    public function edit()
+    public function edit($id)
     {
 
-        return view('pages.clients.edit');
+        $client = Client::find($id);
+        if(!$client){
+            return view("pages.clients.index",[
+                "clients" => Client::all(),
+                "status"  => "Cliente Não Encontrado"
+            ]);
+        }
+
+
+        return view('pages.clients.edit',[
+            "client" => $client
+        ]);
     }
 
-    public function update()
+    public function update(StoreUpdateRequest $request,$id)
     {
+        $client = Client::find($id);
+        if(!$client){
+            return redirect()->back();
+        }
+        $client->update($request->all());
+
+        return redirect()->route('clients.index');
 
     }
 

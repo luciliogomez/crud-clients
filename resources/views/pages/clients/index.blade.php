@@ -28,7 +28,7 @@
                             <td>{{$client->nome }}</td>
                             <td>{{$client->email }}</td>
                             <td>
-                                <a href="/clients/edit" class="btn btn-floating orange">
+                                <a href="{{route('clients.edit',$client->id)}}" class="btn btn-floating orange">
                                     <i class="fa fa-edit"></i>
                                 </a>
                                 <a href="/clients/delete" class="btn btn-floating red">

@@ -61,19 +61,19 @@
                     @yield("content")      
 
                     @if($errors->any())
-            <!-- Modal Structure -->
-                <div id="modal1" class="modal">
-                <div class="modal-content">
-                <h4>Ocorreu um Erro:</h4>
-                @foreach($errors->all() as $error)
-                        <p class="red-text">{{$error}}</p>
-                @endforeach
-                </div>
-                <div class="modal-footer">
-                <a href="#" class="modal-close waves-effect waves-green btn-flat">Agree</a>
-                </div>
-                </div>
-            @endif
+                    <!-- Modal Structure -->
+                        <div id="modal1" class="modal">
+                            <div class="modal-content">
+                                <h4>Ocorreu um Erro:</h4>
+                                @foreach($errors->all() as $error)
+                                        <p class="red-text">{{$error}}</p>
+                                @endforeach
+                            </div>
+                            <div class="modal-footer">
+                                <a href="#" class="modal-close waves-effect waves-green btn-flat">OK</a>
+                            </div>
+                        </div>
+                    @endif
 
                 </div>
             </div>
