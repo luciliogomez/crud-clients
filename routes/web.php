@@ -12,5 +12,5 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('pages.clients.index',['status'=>'']);
+})->name('home');

@@ -1,0 +1,23 @@
+html,body{
+    height: 100%;
+    background-image: url(http://localhost/fcrud/resources/assets/back.jpg);
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 70%;
+}
+
+.content {
+    height: inherit;
+    background-color: rgba( 0,0,0,0.2);
+}
+
+.login {
+    height: 50%;
+    width: 90%;
+    margin-top: 30%;
+    padding: 10px;
+    background-color: aliceblue;
+}
+.campus{
+    padding: 0px 20px;
+}
