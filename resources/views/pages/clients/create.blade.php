@@ -24,7 +24,7 @@
 
             <div class="col s12 input-field ">
                 <input type="submit" name="add" id="" value="ADICIONAR" class="btn green">
-                <a href="{{route('home')}}" class="btn red">VOLTAR</a>
+                <a href="{{route('clients.index')}}" class="btn red">VOLTAR</a>
             </div>
             
             @if(isset($status))
