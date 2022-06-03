@@ -9,6 +9,12 @@ use Illuminate\Http\Request;
 class ClientController extends Controller
 {
     //
+    protected $repository;
+
+    public function __construct(Client $client)
+    {
+        $this->repository = $client;
+    }
 
     public function index()
     {
@@ -72,6 +78,19 @@ class ClientController extends Controller
         $client->delete($id);
 
         return redirect()->route('clients.index');
+
+    }
+
+    public function search(Request $request){
+
+        $results = $this->repository->search($request->filter);
+        $filters = $request->except('_token');
+
+        return view("pages.clients.index",[
+            "clients" => $results,
+            "filters" => $filters
+        ]);
+        //dd($results);
 
     }
 }

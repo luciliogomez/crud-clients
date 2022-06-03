@@ -83,21 +83,7 @@
     <script src="{{ asset('/css/assets/jquery-3.3.1.min.js') }}"></script>
     <script src="{{ asset('/css/assets/materialize/js/materialize.js') }}"></script>
 
-    @if($errors->any())
-        <script>
-            $(document).ready(function(){
-                $('.modal').modal();
-                $('#modal1').modal('open');
-            });
-        </script>
-    @elseif(isset($status))
-            <script>
-                $(document).ready(function(){
-                    $('.modal').modal();
-                    $('#modal1').modal('open');
-                });
-            </script>
-    @endif
+   
     <script>
         $('select').material_select();
         
@@ -111,5 +97,19 @@
             });
         
     </script>
+    
+     @if($errors->any())
+        <script>
+            $(document).ready(function(){
+                $('#modal1').modal('open');
+            });
+        </script>
+    @elseif(isset($status))
+            <script>
+                $(document).ready(function(){
+                    $('#modal1').modal('open');
+                });
+            </script>
+    @endif
 </body>
 </html>

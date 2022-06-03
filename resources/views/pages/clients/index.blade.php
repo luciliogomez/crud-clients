@@ -6,7 +6,21 @@
 @section('title','Lista de Clientes')
 
 @section('content')
+<div class="row">
+    <form action="{{route('clients.search')}}" method="post">
+        @csrf
+        <div class="row">
+            <div class="col s12 m5 input-field">
+                <input type="search" name="filter" id="" value="{{old('filter')}}">
+                <label for="nome">Pesquisar</label>
+            </div>
+            <div class="col s12 m3  input-field">
+                <button type="submit" class="btn blue" style="margin-top: 10px;">PESQUISAR</button>
+            </div>
 
+        </div>
+    </form>
+</div>
 <div class="row " >
     <div class="tabela">
         <div class="col s12 ">
@@ -63,10 +77,17 @@
         
     </div>
     <div class="white paginacao">
-                @if(isset($clients))
-                    {!! $clients->links()!!}
-                @endif
-            </div>
+        @if(isset($filters))
+            @if(isset($clients))
+                    {!! $clients->appends($filters)->links()!!}
+            @endif
+        @else
+            @if(isset($clients))
+                {!! $clients->links()!!}
+            @endif
+        @endif
+                
+    </div>
     
     
     

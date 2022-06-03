@@ -23,10 +23,12 @@ class StoreUpdateRequest extends FormRequest
      */
     public function rules()
     {
+        $id = $this->id;
+
         return [
             //
             "nome" => "required|min:3",
-            "email" => "required|min:3"
+            "email" => "required|min:3|unique:clients,email,{$id},id"
         ];
     }
 
@@ -35,7 +37,8 @@ class StoreUpdateRequest extends FormRequest
         return [
             "nome.required" => "Campo 'nome' é obrigatório",
             "nome.min" => "Campo 'nome' deve ter no mínimo 3 letras",
-            "email.required" => "Campo 'email' é obrigatório"
+            "email.required" => "Campo 'email' é obrigatório",
+            "email.unique" => "Campo 'email' duplicado"
         ];
     }
 }

@@ -10,6 +10,7 @@
     <form action="{{route('clients.update',$client->id)}}" method="post">
         @csrf
         @method('PUT')
+        <input type="hidden" name="id" id="" value="{{$client->id}}">
         <div class="row">
             <div class="col s12 m5 input-field">
                 <input type="text" name="nome" id="" value="{{$client->nome}}">
