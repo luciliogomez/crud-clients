@@ -34,9 +34,16 @@
             Meu Perfil
         </a>
         
-        <a href="/logout" class="list-group-item white-text"><i class="fa fa-power-off fa-fw" aria-hidden="true"></i>
+        <a  class="list-group-item white-text"  href="{{ route('logout') }}"
+            onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                    <!-- {{ __('Logout') }}> -->
+                    <i class="fa fa-power-off fa-fw" aria-hidden="true"></i>
             Sair
         </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+        </form>
     </div>
 </div>
         

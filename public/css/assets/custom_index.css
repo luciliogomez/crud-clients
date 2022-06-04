@@ -1,6 +1,6 @@
 html,body{
     height: 100%;
-    background-image: url(http://localhost/fcrud/resources/assets/back.jpg);
+    background-image: url("{{ asset('/css/assets/back.jpg') }}");
     background-repeat: no-repeat;
     background-position: left;
     background-size: 70%;
