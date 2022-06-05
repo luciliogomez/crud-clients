@@ -13,37 +13,35 @@
             <div class="card red white-text" >
                 <div class="card-content">
                     <h5>Clientes</h5>
-                    <h4>43</h4>
+                    <h4>{{$total}}</h4>
                 </div>
             </div>
         </div>
-    
         <div class="col s12 m3 ">
-            <div class="card blue white-text" >
+            <div class="card purple white-text" >
                 <div class="card-content">
-                    <h5>Clientes</h5>
-                    <h4>43</h4>
+                    <h5>Utilizadores</h5>
+                    <h4>4</h4>
                 </div>
             </div>
         </div>
-    
         <div class="col s12 m3 ">
             <div class="card green white-text" >
                 <div class="card-content">
                     <h5>Clientes</h5>
-                    <h4>43</h4>
+                    <h4>{{$total}}</h4>
                 </div>
             </div>
         </div>
-
         <div class="col s12 m3 ">
-            <div class="card grey white-text" >
+            <div class="card blue white-text" >
                 <div class="card-content">
-                    <h5>Clientes</h5>
-                    <h4>43</h4>
+                    <h5>Clientes Activos</h5>
+                    <h4>{{$total}}</h4>
                 </div>
             </div>
         </div>
+    
         
     </div>
 

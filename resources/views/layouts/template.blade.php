@@ -30,9 +30,9 @@
         <a href="{{route('clients.index')}}" class="list-group-item white-text"><i class="fa fa-list fa-fw" aria-hidden="true"></i>
             Lista de Clientes
         </a>
-        <a href="/perfil" class="list-group-item white-text"><i class="fa fa-user fa-fw" aria-hidden="true"></i>
+        <!-- <a href="/perfil" class="list-group-item white-text"><i class="fa fa-user fa-fw" aria-hidden="true"></i>
             Meu Perfil
-        </a>
+        </a> -->
         
         <a  class="list-group-item white-text"  href="{{ route('logout') }}"
             onclick="event.preventDefault();

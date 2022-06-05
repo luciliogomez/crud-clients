@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+use App\Models\Client;
 use Illuminate\Support\Facades\Route;
 
 
@@ -17,7 +19,10 @@ Route::group([
     "middleware" => ['auth']
 ],function(){
         Route::get('/', function () {
-            return view('pages.home',['status'=>'']);
+            return view('pages.home',[
+                'status'=>'',
+                "total" => (count(Client::all()))
+            ]);
         })->name('home');
     
         Route::get('/clients', "ClientController@index")->name('clients.index');
